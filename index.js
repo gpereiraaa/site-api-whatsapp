@@ -21,13 +21,13 @@ async function criarContatos(user) {
         const nome = document.createElement('h4')
         const img = document.createElement('img')
         nome.textContent = dataUser.nome
-        img.src = dataUser.imagem
+        img.src = './img/image.jpg'
 
         divContato.appendChild(img)
         divContato.appendChild(nome)
 
         const numeroContato = dataUser.numero
-        const urlImage = dataUser.imagem
+        const urlImage = './img/image.jpg'
 
         a.addEventListener('click', function () {
             criarConversa(user, numeroContato, urlImage)
@@ -56,7 +56,7 @@ async function criarConversa(user, contact, img) {
     const imgContact = document.createElement('img')
     const nomeContact = document.createElement('h4')
     nomeContact.textContent = dados.contato
-    imgContact.src = img
+    imgContact.src = './img/image.jpg'
     divContact.appendChild(imgContact)
     divContact.appendChild(nomeContact)
     divTitulo.appendChild(divContact)
