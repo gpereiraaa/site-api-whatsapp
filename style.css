@@ -71,7 +71,12 @@ i {
     background-color: transparent;
     border: none;
     outline: none;
-    font-family:  Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.caixa-de-pesquisa:hover {
+    border-bottom: 4px outset #10c7af;
+    transition: 0.2s;
 }
 
 .caixa-de-pesquisa button {
@@ -157,6 +162,17 @@ i {
     background-color: #E9FEDD;
     border-radius: 10px;
     padding: 10px;
+    display: flex;
+    align-items: end;
+    gap: 5px;
+}
+
+.conversa-user span {
+    color: #6F7C66;
+    font-size: 10px;
+    font-weight: 400;
+    display: flex;
+    justify-content: right;
 }
 
 .conversa-contact {
@@ -168,6 +184,17 @@ i {
     border-radius: 20px;
     background-color: #FCFCFC;
     padding: 10px;
+    display: flex;
+    align-items: end;
+    gap: 5px;
+}
+
+.conversa-contact span {
+    color: #6F7C66;
+    font-size: 10px;
+    font-weight: 400;
+    display: flex;
+    justify-content: right;
 }
 
 .enviar-mensagem {

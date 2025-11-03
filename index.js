@@ -63,17 +63,38 @@ async function criarConversa(user, contact, img) {
     const divIcons = document.createElement('div')
     divIcons.className = 'icons'
 
+    const a1 = document.createElement('a')
+    a1.href = '#'
     const icons1 = document.createElement('i')
     icons1.className = 'fa-solid fa-video'
+    a1.appendChild(icons1)
 
+    const a2 = document.createElement('a')
+    a2.href = '#'
     const icons2 = document.createElement('i')
     icons2.className = 'fa-solid fa-phone'
+    a2.appendChild(icons2)
 
+    const a3 = document.createElement('a')
+    a3.href = '#'
     const icons3 = document.createElement('i')
     icons3.className = 'fa-solid fa-magnifying-glass'
-    divIcons.appendChild(icons1)
-    divIcons.appendChild(icons2)
-    divIcons.appendChild(icons3)
+    a3.appendChild(icons3)
+
+    const a4 = document.createElement('a')
+    a4.href = '#'
+    const icons4 = document.createElement('i')
+    icons4.className = 'fa-regular fa-circle-xmark'
+    a4.addEventListener('click', function () {
+        containerDireita.textContent = ''
+    })
+    a4.appendChild(icons4)
+
+
+    divIcons.appendChild(a1)
+    divIcons.appendChild(a2)
+    divIcons.appendChild(a3)
+    divIcons.appendChild(a4)
     divTitulo.appendChild(divIcons)
 
     const divConversa = document.createElement('div')
@@ -85,6 +106,9 @@ async function criarConversa(user, contact, img) {
             divConversaUser.className = 'conversa-user'
             const mensagem = document.createElement('p')
             mensagem.textContent = dataMessage.conteudo
+            const horario = document.createElement('span')
+            horario.textContent = dataMessage.horario
+            mensagem.appendChild(horario)
             divConversaUser.appendChild(mensagem)
             divConversa.appendChild(divConversaUser)
         } else {
@@ -92,6 +116,9 @@ async function criarConversa(user, contact, img) {
             divConversaContact.className = 'conversa-contact'
             const mensagem = document.createElement('p')
             mensagem.textContent = dataMessage.conteudo
+            const horario = document.createElement('span')
+            horario.textContent = dataMessage.horario
+            mensagem.appendChild(horario)
             divConversaContact.appendChild(mensagem)
             divConversa.appendChild(divConversaContact)
         }
@@ -100,22 +127,32 @@ async function criarConversa(user, contact, img) {
     const divEnviar = document.createElement('div')
     divEnviar.className = 'enviar-mensagem'
 
-    const icons4 = document.createElement('i')
-    icons4.className = 'fa-solid fa-face-smile'
-
+    const a5 = document.createElement('a')
     const icons5 = document.createElement('i')
-    icons5.className = 'fa-solid fa-paperclip'
+    icons5.className = 'fa-solid fa-face-smile'
+    a5.href = '#'
+    a5.appendChild(icons5)
 
+    const a6 = document.createElement('a')
     const icons6 = document.createElement('i')
-    icons6.className = 'fa-solid fa-microphone-lines'
-    const inputEnviar  = document.createElement('input')
+    icons6.className = 'fa-solid fa-paperclip'
+    a6.href = '#'
+    a6.appendChild(icons6)
+
+    const a7 = document.createElement('a')
+    const icons7 = document.createElement('i')
+    icons7.className = 'fa-solid fa-microphone-lines'
+    a7.href = '#'
+    a7.appendChild(icons7)
+
+    const inputEnviar = document.createElement('input')
     inputEnviar.setAttribute('type', 'text')
     inputEnviar.setAttribute('placeholder', 'Escreva a mensagem')
 
-    divEnviar.appendChild(icons4)
-    divEnviar.appendChild(icons5)
+    divEnviar.appendChild(a5)
+    divEnviar.appendChild(a6)
     divEnviar.appendChild(inputEnviar)
-    divEnviar.appendChild(icons6)
+    divEnviar.appendChild(a7)
 
     containerDireita.appendChild(divTitulo)
     containerDireita.appendChild(divConversa)
